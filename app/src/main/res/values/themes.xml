@@ -29,6 +29,9 @@
         <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
 
+        <!-- Font -->
+        <item name="fontFamily">@font/cairo_font</item>
+
         <!-- EditTextStyle -->
         <item name="editTextStyle">@style/App_EditTextStyle</item>
 
