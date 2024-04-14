@@ -24,15 +24,6 @@
             android:layout_height="140dp"
             android:src="@drawable/logo_edusync_teacher" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/login"
-            android:textColor="@color/white"
-            android:textSize="22sp" />
-
 
     </LinearLayout>
 

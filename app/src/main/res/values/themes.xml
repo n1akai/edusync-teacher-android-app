@@ -52,7 +52,7 @@
     </style>
 
     <style name="App_ButtonStyle" parent="Widget.Material3.Button">
-        <item name="android:padding">10dp</item>
+        <item name="android:padding">8dp</item>
         <item name="android:textSize">16sp</item>
     </style>
 
