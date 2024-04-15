@@ -16,4 +16,5 @@
     <string name="test">Test</string>
     <string name="attendance">Attendance</string>
     <string name="mark_attendance">Mark attendance</string>
+    <string name="logout">Logout</string>
 </resources>
