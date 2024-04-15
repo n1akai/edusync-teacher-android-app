@@ -21,24 +21,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/colorPrimary"
-                app:navigationIconTint="?attr/colorOnSurface"
                 android:minHeight="?attr/actionBarSize"
-                app:titleTextColor="?attr/colorOnSurface"
-                app:subtitleTextColor="?attr/colorOnSurfaceVariant"
-                tools:subtitle="@string/app_name"
-                tools:title="@string/app_name"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIconTint="?attr/colorOnSurface"
+                app:subtitleTextColor="?attr/colorOnSurfaceVariant"
+                app:titleTextColor="?attr/colorOnSurface"
+                tools:subtitle="@string/app_name"
+                tools:title="@string/app_name" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="wrap_content"
+            app:navGraph="@navigation/nav_graph" />
 
     </LinearLayout>
 

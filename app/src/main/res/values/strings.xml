@@ -10,4 +10,10 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="password_hint">********</string>
+
+    <!-- Home Activity -->
+    <string name="homework">Homework</string>
+    <string name="test">Test</string>
+    <string name="attendance">Attendance</string>
+    <string name="mark_attendance">Mark attendance</string>
 </resources>

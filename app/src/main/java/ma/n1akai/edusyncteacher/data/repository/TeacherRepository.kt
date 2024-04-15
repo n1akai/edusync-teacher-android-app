@@ -8,5 +8,5 @@ class TeacherRepository(
 ) : SafeApiCall {
 
     suspend fun getTeacher() = safeApiCall { api.getTeacher() }
-
+    suspend fun getClasses() = safeApiCall { api.getClasses() }
 }
