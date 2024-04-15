@@ -5,5 +5,6 @@ data class Class (
     val branch_id: Int,
     val class_name: String,
     val class_year: Int,
-    val remarks: String
+    val remarks: String,
+    val branch_name: String
 )

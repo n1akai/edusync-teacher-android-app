@@ -14,7 +14,14 @@
     <!-- Home Activity -->
     <string name="homework">Homework</string>
     <string name="test">Test</string>
-    <string name="attendance">Attendance</string>
+    <string name="modules">Modules</string>
     <string name="mark_attendance">Mark attendance</string>
     <string name="logout">Logout</string>
+    
+    <!-- Homework Fragment -->
+    <string name="submitted">Submitted</string>
+
+    <!-- Attendance Fragment -->
+    <string name="absent">Absent</string>
+    <string name="submit">Submit</string>
 </resources>

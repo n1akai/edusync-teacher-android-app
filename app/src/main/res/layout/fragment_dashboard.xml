@@ -9,9 +9,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginTop="8dp"
         android:gravity="center"
+        android:orientation="vertical"
         android:padding="12dp">
 
         <LinearLayout
@@ -28,7 +28,6 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/linear_choix1"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:background="@drawable/circle_border"
@@ -36,7 +35,6 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/image1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:src="@drawable/ic_homework" />
@@ -45,7 +43,6 @@
 
 
                 <TextView
-                    android:id="@+id/textView1"
                     style="@style/App_LargeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -70,7 +67,6 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/linear_choix2"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:background="@drawable/circle_border"
@@ -78,7 +74,6 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/image2"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:src="@drawable/ic_examination" />
@@ -86,7 +81,6 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView2"
                     style="@style/App_LargeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -111,7 +105,6 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/linear_choix3"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:background="@drawable/circle_border"
@@ -119,7 +112,6 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/image3"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:src="@drawable/ic_attendance" />
@@ -127,7 +119,6 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView3"
                     style="@style/App_LargeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -137,7 +128,7 @@
                     android:ellipsize="end"
                     android:focusable="true"
                     android:maxLines="1"
-                    android:text="@string/attendance"
+                    android:text="@string/modules"
                     android:textColor="@color/md_theme_light_tertiary"
                     android:textStyle="bold" />
 
@@ -159,8 +150,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/ic_logout" />
 
                 </LinearLayout>
@@ -188,7 +179,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:background="@drawable/bg_lenear"
-            android:paddingHorizontal="6dp"
+            android:paddingStart="6dp"
+            android:paddingEnd="28dp"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="22sp"

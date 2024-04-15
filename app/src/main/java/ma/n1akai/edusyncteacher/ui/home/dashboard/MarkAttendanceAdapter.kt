@@ -21,6 +21,7 @@ class MarkAttendanceAdapter : RecyclerView.Adapter<MarkAttendanceAdapter.MarkAtt
         fun bind(item: Class) {
             binding.apply {
                 tvClassName.text = item.class_name
+                tvBranchName.text = item.branch_name
             }
         }
     }

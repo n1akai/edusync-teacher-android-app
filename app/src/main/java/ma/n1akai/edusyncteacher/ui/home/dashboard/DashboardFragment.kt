@@ -15,6 +15,8 @@ import ma.n1akai.edusyncteacher.ui.BaseFragment
 import ma.n1akai.edusyncteacher.util.UiState
 import ma.n1akai.edusyncteacher.util.observeWithLoadingDialog
 import ma.n1akai.edusyncteacher.util.snackbar
+import java.text.SimpleDateFormat
+import java.util.Date
 
 @AndroidEntryPoint
 class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
@@ -29,8 +31,14 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setTodayDate()
         setUpRecyclerView()
         observer()
+    }
+
+    private fun setTodayDate() {
+        val fromater = SimpleDateFormat("dd/MM/YYYY")
+        binding.dashboardTvTodayDate.text = fromater.format(Date())
     }
 
     private fun setUpRecyclerView() {
