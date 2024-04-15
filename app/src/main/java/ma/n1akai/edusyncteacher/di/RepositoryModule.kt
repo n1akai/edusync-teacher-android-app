@@ -7,6 +7,7 @@ import dagger.hilt.components.SingletonComponent
 import ma.n1akai.edusyncteacher.data.network.AuthApi
 import ma.n1akai.edusyncteacher.data.network.TeacherApi
 import ma.n1akai.edusyncteacher.data.repository.AuthRepository
+import ma.n1akai.edusyncteacher.data.repository.StudentRepository
 import ma.n1akai.edusyncteacher.data.repository.TeacherRepository
 
 @Module
@@ -21,6 +22,11 @@ class RepositoryModule {
     @Provides
     fun provideTeacherRepository(teacherApi: TeacherApi) : TeacherRepository {
         return TeacherRepository(teacherApi)
+    }
+
+    @Provides
+    fun provideStudentRepository(teacherApi: TeacherApi) : StudentRepository {
+        return StudentRepository(teacherApi)
     }
 
 }

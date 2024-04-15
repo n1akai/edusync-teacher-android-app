@@ -8,17 +8,18 @@ class LoadingDialog(
     private val context: Context
 ) {
 
-    private lateinit var dialog: AlertDialog
+    private var dialog: AlertDialog? = null
 
     fun show() {
         dialog = AlertDialog.Builder(context)
             .setView(R.layout.progress_layout)
             .create()
-        dialog.show()
+        dialog?.show()
     }
 
     fun hide() {
-        dialog.hide()
+        dialog?.hide()
+        dialog = null
     }
 
 }

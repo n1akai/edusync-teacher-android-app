@@ -17,7 +17,10 @@
     <string name="modules">Modules</string>
     <string name="mark_attendance">Mark attendance</string>
     <string name="logout">Logout</string>
-    
+
+    <!-- Dashboard Fragment -->
+    <string name="dashboard">Dashboard</string>
+
     <!-- Homework Fragment -->
     <string name="submitted">Submitted</string>
 

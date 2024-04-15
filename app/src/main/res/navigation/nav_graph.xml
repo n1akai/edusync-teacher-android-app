@@ -7,6 +7,15 @@
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="ma.n1akai.edusyncteacher.ui.home.dashboard.DashboardFragment"
-        android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:label="@string/dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_homeworkFragment"
+            app:destination="@id/homeworkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeworkFragment"
+        android:name="ma.n1akai.edusyncteacher.ui.home.homework.HomeworkFragment"
+        android:label="@string/homework"
+        tools:layout="@layout/fragment_homework" />
 </navigation>
