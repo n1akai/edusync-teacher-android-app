@@ -7,7 +7,7 @@
     tools:context=".ui.home.attendance.AttendanceFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/homework_rc"
+        android:id="@+id/students_rc"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/button"

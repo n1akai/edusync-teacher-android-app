@@ -12,10 +12,31 @@
         <action
             android:id="@+id/action_dashboardFragment_to_homeworkFragment"
             app:destination="@id/homeworkFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_attendanceFragment"
+            app:destination="@id/attendanceFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeworkFragment"
         android:name="ma.n1akai.edusyncteacher.ui.home.homework.HomeworkFragment"
         android:label="@string/homework"
-        tools:layout="@layout/fragment_homework" />
+        tools:layout="@layout/fragment_homework" >
+        <action
+            android:id="@+id/action_homeworkFragment_to_addHomeworkFragment"
+            app:destination="@id/addHomeworkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addHomeworkFragment"
+        android:name="ma.n1akai.edusyncteacher.ui.home.homework.addhomework.AddHomeworkFragment"
+        android:label="@string/add_homework"
+        tools:layout="@layout/fragment_add_homework" />
+    <fragment
+        android:id="@+id/attendanceFragment"
+        android:name="ma.n1akai.edusyncteacher.ui.home.attendance.AttendanceFragment"
+        android:label="fragment_attendance"
+        tools:layout="@layout/fragment_attendance" >
+        <argument
+            android:name="classId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

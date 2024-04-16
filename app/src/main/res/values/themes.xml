@@ -38,6 +38,9 @@
         <!-- ButtonStyle -->
         <item name="materialButtonStyle">@style/App_ButtonStyle</item>
 
+        <!-- Spinner Style -->
+        <item name="spinnerStyle">@style/App_SpinnerStyle</item>
+
     </style>
 
     <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
@@ -47,6 +50,11 @@
     </style>
 
     <style name="App_EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_bg</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="App_SpinnerStyle" parent="Widget.AppCompat.Spinner">
         <item name="android:background">@drawable/edit_text_bg</item>
         <item name="android:padding">10dp</item>
     </style>

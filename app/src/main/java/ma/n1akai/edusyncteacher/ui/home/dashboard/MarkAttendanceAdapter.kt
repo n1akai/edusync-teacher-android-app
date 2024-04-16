@@ -1,6 +1,7 @@
 package ma.n1akai.edusyncteacher.ui.home.dashboard
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -8,6 +9,8 @@ import ma.n1akai.edusyncteacher.data.model.Class
 import ma.n1akai.edusyncteacher.databinding.ListClassesBinding
 
 class MarkAttendanceAdapter : RecyclerView.Adapter<MarkAttendanceAdapter.MarkAttendanceViewHolder>() {
+
+    lateinit var listener: OnClassClickListener
 
     var items = listOf<Class>()
         set(value) {
@@ -23,6 +26,9 @@ class MarkAttendanceAdapter : RecyclerView.Adapter<MarkAttendanceAdapter.MarkAtt
                 tvClassName.text = item.class_name
                 tvBranchName.text = item.branch_name
             }
+            binding.root.setOnClickListener {
+                listener.onClassClick(item, it)
+            }
         }
     }
 
@@ -36,6 +42,10 @@ class MarkAttendanceAdapter : RecyclerView.Adapter<MarkAttendanceAdapter.MarkAtt
     override fun onBindViewHolder(holder: MarkAttendanceViewHolder, position: Int) {
         val item = items[position]
         holder.bind(item)
+    }
+
+    interface OnClassClickListener {
+        fun onClassClick(theClass: Class, view: View)
     }
 
 }

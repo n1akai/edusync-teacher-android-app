@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import ma.n1akai.edusyncteacher.R
@@ -58,6 +59,11 @@ class HomeworkFragment : BaseFragment<FragmentHomeworkBinding>() {
 
         homeworkObserver()
         studentsObserver()
+
+        binding.homeworkFabAdd.setOnClickListener {
+            findNavController()
+                .navigate(HomeworkFragmentDirections.actionHomeworkFragmentToAddHomeworkFragment())
+        }
     }
 
     private fun homeworkObserver() {

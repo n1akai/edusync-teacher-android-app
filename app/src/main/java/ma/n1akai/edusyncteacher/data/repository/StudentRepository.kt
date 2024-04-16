@@ -10,4 +10,6 @@ class StudentRepository(
     suspend fun getStudentsByHomework(classId: Int, homeworkId: Int) =
         safeApiCall { api.getStudentsByHomework(classId, homeworkId) }
 
+    suspend fun getClassStudents(classId: Int) = safeApiCall { api.getClassStudents(classId) }
+
 }

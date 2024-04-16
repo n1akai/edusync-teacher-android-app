@@ -24,6 +24,13 @@
     <!-- Homework Fragment -->
     <string name="submitted">Submitted</string>
 
+    <!-- Add Homework Fragment -->
+    <string name="add_homework">Add Homework</string>
+    <string name="homework_name">Homework name</string>
+    <string name="class_">Class</string>
+    <string name="subjects">Subjects</string>
+    <string name="description">Description</string>
+
     <!-- Attendance Fragment -->
     <string name="absent">Absent</string>
     <string name="submit">Submit</string>

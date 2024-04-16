@@ -5,7 +5,8 @@ data class Teacher(
     val first_name: String,
     val last_name: String,
     val email: String,
-    val phone_number: String
+    val phone_number: String,
+    val cne: String
 ) {
     fun getFullName(): String {
         return "${last_name.uppercase()} ${first_name.uppercase()}"

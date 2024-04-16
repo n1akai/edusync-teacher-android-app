@@ -18,8 +18,7 @@ class LoadingDialog(
     }
 
     fun hide() {
-        dialog?.hide()
-        dialog = null
+        dialog?.dismiss()
     }
 
 }

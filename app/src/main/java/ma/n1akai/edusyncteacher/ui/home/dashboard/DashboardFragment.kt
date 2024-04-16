@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import ma.n1akai.edusyncteacher.R
 import ma.n1akai.edusyncteacher.component.common.LoadingDialog
+import ma.n1akai.edusyncteacher.data.model.Class
 import ma.n1akai.edusyncteacher.databinding.FragmentDashboardBinding
 import ma.n1akai.edusyncteacher.ui.BaseFragment
 import ma.n1akai.edusyncteacher.ui.login.AuthActivity
@@ -28,7 +29,8 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
 
     private val markAttendanceAdapter = MarkAttendanceAdapter()
     private val viewModel: DashboardViewModel by viewModels()
-    @Inject lateinit var tokenManager: TokenManager
+    @Inject
+    lateinit var tokenManager: TokenManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +52,17 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
             startActivity(Intent(requireActivity(), AuthActivity::class.java).also {
                 it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             })
+        }
+
+        markAttendanceAdapter.listener = object : MarkAttendanceAdapter.OnClassClickListener {
+            override fun onClassClick(theClass: Class, view: View) {
+                findNavController()
+                    .navigate(
+                        DashboardFragmentDirections.actionDashboardFragmentToAttendanceFragment(
+                            theClass.class_id
+                        )
+                    )
+            }
         }
     }
 
