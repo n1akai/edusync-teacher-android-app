@@ -22,11 +22,11 @@
             style="@style/App_LargeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/module"
             android:textColor="@color/white"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Module:" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_module_name"
@@ -47,11 +47,11 @@
             style="@style/App_LargeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/branch"
             android:textColor="@color/white"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_module_name"
-            tools:text="Branch:" />
+            app:layout_constraintTop_toBottomOf="@id/tv_module_name" />
 
         <TextView
             android:id="@+id/tv_branch_name"
@@ -72,11 +72,11 @@
             style="@style/App_LargeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/group"
             android:textColor="@color/white"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_class_name_label"
-            tools:text="Group:" />
+            app:layout_constraintTop_toBottomOf="@id/tv_class_name_label" />
 
         <TextView
             android:id="@+id/tv_class"
@@ -90,11 +90,12 @@
             tools:text="DEV101" />
 
         <TextView
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20sp"
+            android:id="@+id/tv_mht"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="80H" />

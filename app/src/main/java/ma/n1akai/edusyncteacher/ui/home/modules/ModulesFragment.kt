@@ -6,26 +6,44 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import ma.n1akai.edusyncteacher.R
+import ma.n1akai.edusyncteacher.databinding.FragmentModulesBinding
+import ma.n1akai.edusyncteacher.ui.BaseFragment
+import ma.n1akai.edusyncteacher.util.observeWithLoadingDialog
 
-class ModulesFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = ModulesFragment()
-    }
+@AndroidEntryPoint
+class ModulesFragment : BaseFragment<FragmentModulesBinding>() {
 
     private val viewModel: ModulesViewModel by viewModels()
+    private val moduleAdapter = ModuleAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
+        viewModel.getModules()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_modules, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.modulesRc.apply {
+            adapter = moduleAdapter
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(requireContext())
+        }
+
+        observer()
     }
+
+    private fun observer() {
+        viewModel.modules.observeWithLoadingDialog(viewLifecycleOwner, requireContext()) {
+            moduleAdapter.items = it
+            binding.modulesTv.text = requireContext().getString(R.string.modules_size, it.size)
+        }
+    }
+
+    override fun provideBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) = FragmentModulesBinding.inflate(inflater, container, false)
 }

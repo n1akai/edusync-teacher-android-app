@@ -21,6 +21,7 @@ import ma.n1akai.edusyncteacher.databinding.FragmentAddHomeworkBinding
 import ma.n1akai.edusyncteacher.ui.BaseFragment
 import ma.n1akai.edusyncteacher.ui.home.homework.SpinnerAdapter
 import ma.n1akai.edusyncteacher.util.observeWithLoadingDialog
+import ma.n1akai.edusyncteacher.util.snackbar
 
 @AndroidEntryPoint
 class AddHomeworkFragment : BaseFragment<FragmentAddHomeworkBinding>() {
@@ -29,6 +30,9 @@ class AddHomeworkFragment : BaseFragment<FragmentAddHomeworkBinding>() {
     private lateinit var homework: HomeworkRequest
     private lateinit var selectedClass: Class
     private lateinit var selectedModule: Module
+    private lateinit var homeworkName: String
+    private lateinit var description: String
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -90,6 +94,19 @@ class AddHomeworkFragment : BaseFragment<FragmentAddHomeworkBinding>() {
         }
     }
 
+    private fun validate(): Boolean {
+        binding.apply {
+            homeworkName = addEtHomeworkName.text.toString()
+            description = addEtDescription.text.toString()
+        }
+        if (homeworkName.isEmpty() || description.isEmpty()) {
+            binding.root.snackbar("Homework name and description are required")
+            return false
+        }
+
+        return true
+    }
+
     private fun submit() {
         viewModel.homework.observeWithLoadingDialog(viewLifecycleOwner, requireContext()) {
             val dialog = AlertDialog.Builder(requireContext())
@@ -106,16 +123,16 @@ class AddHomeworkFragment : BaseFragment<FragmentAddHomeworkBinding>() {
         }
 
         binding.addBtnSubmit.setOnClickListener {
-            binding.apply {
-                val homeworkName = addEtHomeworkName.text.toString()
+            if (validate()) {
                 val classId = selectedClass.class_id
                 val moduleId = selectedModule.course_id
-                val description = addEtDescription.text.toString()
                 homework = HomeworkRequest(homeworkName, classId, moduleId, description)
+                viewModel.addHomework(homework)
             }
-            viewModel.addHomework(homework)
         }
+
     }
+
 
     override fun provideBinding(
         inflater: LayoutInflater,

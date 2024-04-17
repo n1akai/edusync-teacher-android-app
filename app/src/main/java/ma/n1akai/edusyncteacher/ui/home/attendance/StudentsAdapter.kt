@@ -15,9 +15,12 @@ class StudentsAdapter :
 
     var items = listOf<Student>()
         set(value) {
-            field = value
+            field = value.sortedBy {
+                it.position
+            }
             notifyDataSetChanged()
         }
+    var absentStudents = mutableListOf<Student>()
 
     inner class StudentsViewHolder(
         private val binding: ListAttendanceBinding
@@ -26,7 +29,14 @@ class StudentsAdapter :
             binding.apply {
                 numberHomeWork.text = item.getPosition()
                 nameHomeWork.text = item.getFullName()
-
+                isAbsent.isChecked = absentStudents.contains(item)
+                isAbsent.setOnCheckedChangeListener { buttonView, isChecked ->
+                    if (isChecked) {
+                        absentStudents.add(item)
+                    } else {
+                        absentStudents.remove(item)
+                    }
+                }
             }
         }
     }

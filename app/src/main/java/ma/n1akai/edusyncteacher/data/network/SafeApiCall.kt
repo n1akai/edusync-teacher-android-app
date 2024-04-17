@@ -1,6 +1,7 @@
 package ma.n1akai.edusyncteacher.data.network
 
 import ma.n1akai.edusyncteacher.data.network.response.AuthResponse
+import ma.n1akai.edusyncteacher.data.network.response.BaseResponse
 import ma.n1akai.edusyncteacher.util.UiState
 import retrofit2.HttpException
 
@@ -10,6 +11,13 @@ interface SafeApiCall {
         return try {
             when (val data = call.invoke()) {
                 is AuthResponse -> {
+                    if (data.error) {
+                        return UiState.Failure(data.message)
+                    }
+                    return UiState.Success(data)
+                }
+
+                is BaseResponse -> {
                     if (data.error) {
                         return UiState.Failure(data.message)
                     }

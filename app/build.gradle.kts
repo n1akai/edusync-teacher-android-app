@@ -84,4 +84,7 @@ dependencies {
 
     // Swipe to refresh
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
+
+    // MaskedEditText
+    implementation("io.github.vicmikhailau:MaskedEditText:5.0.1")
 }

@@ -14,6 +14,7 @@
     <!-- Home Activity -->
     <string name="homework">Homework</string>
     <string name="test">Test</string>
+    <string name="profile">Profile</string>
     <string name="modules">Modules</string>
     <string name="mark_attendance">Mark attendance</string>
     <string name="logout">Logout</string>
@@ -23,6 +24,7 @@
 
     <!-- Homework Fragment -->
     <string name="submitted">Submitted</string>
+    <string name="classes">Classes</string>
 
     <!-- Add Homework Fragment -->
     <string name="add_homework">Add Homework</string>
@@ -30,8 +32,32 @@
     <string name="class_">Class</string>
     <string name="subjects">Subjects</string>
     <string name="description">Description</string>
+    <string name="homework_name_hint">Exercise...</string>
+    <string name="homework_description_hint">What the homework about...</string>
 
     <!-- Attendance Fragment -->
     <string name="absent">Absent</string>
     <string name="submit">Submit</string>
+    <string name="attendance">Attendance</string>
+    <string name="class_timing">Class timing</string>
+    <string name="to">to</string>
+
+    <!-- Profile Fragment -->
+    <string name="cne">CNE</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="joining_date">Joining date</string>
+    <string name="qualification">Qualification</string>
+    <string name="experience">Experience</string>
+    <string name="adresse">Adresse</string>
+    <string name="change_password">Change password</string>
+
+    <!-- Module Fragment -->
+    <string name="modules_size">Modules (%1$d)</string>
+    <string name="module">Module:</string>
+    <string name="branch">Branch:</string>
+    <string name="group">Group:</string>
+
 </resources>

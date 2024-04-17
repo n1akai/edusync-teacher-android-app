@@ -51,7 +51,7 @@
             tools:text="Fatima" />
 
         <CheckBox
-            android:id="@+id/etatHomeWork"
+            android:id="@+id/is_absent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/absent"

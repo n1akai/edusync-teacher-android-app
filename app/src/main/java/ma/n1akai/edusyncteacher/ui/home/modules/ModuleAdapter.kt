@@ -1,40 +1,41 @@
-package ma.n1akai.edusyncteacher.ui.home.homework
+package ma.n1akai.edusyncteacher.ui.home.modules
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import ma.n1akai.edusyncteacher.data.model.Class
+import ma.n1akai.edusyncteacher.data.model.Module
 import ma.n1akai.edusyncteacher.data.model.Student
 import ma.n1akai.edusyncteacher.databinding.ListClassesBinding
 import ma.n1akai.edusyncteacher.databinding.ListHomeWorkBinding
+import ma.n1akai.edusyncteacher.databinding.ListModulesBinding
 
-class StudentsHomeworkAdapter :
-    RecyclerView.Adapter<StudentsHomeworkAdapter.StudentsHomeworkViewHolder>() {
+class ModuleAdapter :
+    RecyclerView.Adapter<ModuleAdapter.ModuleViewHolder>() {
 
-    var items = listOf<Student>()
+    var items = listOf<Module>()
         set(value) {
-            field = value.sortedBy {
-                it.position
-            }
+            field = value
             notifyDataSetChanged()
         }
 
-    inner class StudentsHomeworkViewHolder(
-        private val binding: ListHomeWorkBinding
+    inner class ModuleViewHolder(
+        private val binding: ListModulesBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Student) {
+        fun bind(item: Module) {
             binding.apply {
-                numberHomeWork.text = item.getPosition()
-                nameHomeWork.text = item.getFullName()
-                etatHomeWork.isVisible = item.isHomeworkDone()
+                tvClass.text = item.class_name
+                tvModuleName.text = "${item.course_code} - ${item.course_name}"
+                tvBranchName.text = item.branch_name
+                tvMht.text = "C:${item.Coef} - ${item.MHT}H"
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        StudentsHomeworkViewHolder(
-            ListHomeWorkBinding.inflate(
+        ModuleViewHolder(
+            ListModulesBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent, false
             )
@@ -42,7 +43,7 @@ class StudentsHomeworkAdapter :
 
     override fun getItemCount() = items.size
 
-    override fun onBindViewHolder(holder: StudentsHomeworkViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ModuleViewHolder, position: Int) {
         val item = items[position]
         holder.bind(item)
     }

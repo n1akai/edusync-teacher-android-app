@@ -5,6 +5,7 @@ import ma.n1akai.edusyncteacher.data.model.Homework
 import ma.n1akai.edusyncteacher.data.model.Module
 import ma.n1akai.edusyncteacher.data.model.Student
 import ma.n1akai.edusyncteacher.data.model.Teacher
+import ma.n1akai.edusyncteacher.data.network.request.AbsentRequest
 import ma.n1akai.edusyncteacher.data.network.request.HomeworkRequest
 import ma.n1akai.edusyncteacher.data.network.response.BaseResponse
 import retrofit2.http.Body
@@ -38,6 +39,11 @@ interface TeacherApi {
     @GET("/teacher/class/{classId}/students")
     suspend fun getClassStudents(@Path("classId") classId: Int) : List<Student>
 
+    @POST("/teacher/absent")
+    suspend fun registerAttendance(@Body list: List<AbsentRequest>) : BaseResponse
+
+    @GET("/teacher/courses")
+    suspend fun getModules() : List<Module>
 
 
 }

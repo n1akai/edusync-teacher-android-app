@@ -15,6 +15,12 @@
         <action
             android:id="@+id/action_dashboardFragment_to_attendanceFragment"
             app:destination="@id/attendanceFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_modulesFragment"
+            app:destination="@id/modulesFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeworkFragment"
@@ -33,10 +39,23 @@
     <fragment
         android:id="@+id/attendanceFragment"
         android:name="ma.n1akai.edusyncteacher.ui.home.attendance.AttendanceFragment"
-        android:label="fragment_attendance"
-        tools:layout="@layout/fragment_attendance" >
+        android:label="@string/attendance"
+        tools:layout="@layout/fragment_attendance">
         <argument
             android:name="classId"
             app:argType="integer" />
+        <argument
+            android:name="className"
+            app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ma.n1akai.edusyncteacher.ui.home.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/modulesFragment"
+        android:name="ma.n1akai.edusyncteacher.ui.home.modules.ModulesFragment"
+        android:label="@string/modules"
+        tools:layout="@layout/fragment_modules" />
 </navigation>
