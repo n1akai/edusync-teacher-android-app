@@ -32,6 +32,7 @@
                 style="@style/App_LargeText"
                 android:id="@+id/profile_tv_full_name"
                 android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
                 tools:text="ABOULHODA MILOUD "
                 android:textColor="@color/white"
@@ -69,7 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:paddingVertical="6dp">
 
                     <TextView
                         android:textStyle="bold"
@@ -91,8 +92,7 @@
                 <View
 
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_height="1dp"
                     android:layout_weight="0.3"
                     android:background="@color/md_theme_light_tertiary" />
 
@@ -100,7 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:paddingVertical="6dp">
 
                     <TextView
                         android:textStyle="bold"
@@ -116,14 +116,13 @@
                         android:layout_height="wrap_content"
                         android:textAlignment="textEnd"
                         tools:text="Miloud"
-                        android:textColor="@color/md_theme_light_primary" />
+                        android:textColor="@color/md_theme_light_tertiary" />
                 </LinearLayout>
 
                 <View
 
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_height="1dp"
                     android:layout_weight="0.3"
                     android:background="@color/md_theme_light_tertiary" />
 
@@ -131,7 +130,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:paddingVertical="6dp">
 
                     <TextView
                         android:textStyle="bold"
@@ -147,14 +146,13 @@
                         android:layout_height="wrap_content"
                         android:textAlignment="textEnd"
                         tools:text="Aboulhoda"
-                        android:textColor="@color/md_theme_light_primary" />
+                        android:textColor="@color/md_theme_light_tertiary" />
                 </LinearLayout>
 
                 <View
 
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_height="1dp"
                     android:layout_weight="0.3"
                     android:background="@color/md_theme_light_tertiary" />
 
@@ -162,7 +160,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:paddingVertical="6dp">
 
                     <TextView
                         android:textStyle="bold"
@@ -178,14 +176,13 @@
                         android:layout_height="wrap_content"
                         android:textAlignment="textEnd"
                         tools:text="0601020304"
-                        android:textColor="@color/md_theme_light_primary" />
+                        android:textColor="@color/md_theme_light_tertiary" />
                 </LinearLayout>
 
                 <View
 
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_height="1dp"
                     android:layout_weight="0.3"
                     android:background="@color/md_theme_light_tertiary" />
 
@@ -193,7 +190,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:paddingVertical="6dp">
 
                     <TextView
                         android:textStyle="bold"
@@ -209,14 +206,13 @@
                         android:layout_height="wrap_content"
                         android:textAlignment="textEnd"
                         tools:text="01/01/1970"
-                        android:textColor="@color/md_theme_light_primary" />
+                        android:textColor="@color/md_theme_light_tertiary" />
                 </LinearLayout>
 
                 <View
 
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_height="1dp"
                     android:layout_weight="0.3"
                     android:background="@color/md_theme_light_tertiary" />
 
@@ -224,7 +220,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:paddingVertical="6dp">
 
                     <TextView
                         android:textStyle="bold"
@@ -240,14 +236,13 @@
                         android:layout_height="wrap_content"
                         android:textAlignment="textEnd"
                         tools:text="Qualification"
-                        android:textColor="@color/md_theme_light_primary" />
+                        android:textColor="@color/md_theme_light_tertiary" />
                 </LinearLayout>
 
                 <View
 
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_height="1dp"
                     android:layout_weight="0.3"
                     android:background="@color/md_theme_light_tertiary" />
 
@@ -255,7 +250,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:paddingVertical="6dp">
 
                     <TextView
                         android:textStyle="bold"
@@ -271,14 +266,13 @@
                         android:layout_height="wrap_content"
                         android:textAlignment="textEnd"
                         tools:text="Experience"
-                        android:textColor="@color/md_theme_light_primary" />
+                        android:textColor="@color/md_theme_light_tertiary" />
                 </LinearLayout>
 
                 <View
 
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_height="1dp"
                     android:layout_weight="0.3"
                     android:background="@color/md_theme_light_tertiary" />
 
@@ -286,7 +280,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:paddingVertical="6dp">
 
                     <TextView
                         android:textStyle="bold"
@@ -302,7 +296,7 @@
                         android:layout_height="wrap_content"
                         android:textAlignment="textEnd"
                         tools:text="Experience"
-                        android:textColor="@color/md_theme_light_primary" />
+                        android:textColor="@color/md_theme_light_tertiary" />
                 </LinearLayout>
 
 
