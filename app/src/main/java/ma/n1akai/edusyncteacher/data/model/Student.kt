@@ -5,7 +5,9 @@ data class Student (
     val first_name: String,
     val last_name: String,
     val position: Int,
-    val has_homework: Int
+    val has_homework: Int,
+    var test_marks: MutableMap<String, Double>?,
+    var mark: Double?
 ) {
     fun getFullName(): String {
         return "${last_name.uppercase()} ${first_name.uppercase()}"

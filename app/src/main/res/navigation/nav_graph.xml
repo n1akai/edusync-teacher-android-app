@@ -57,5 +57,33 @@
         android:id="@+id/modulesFragment"
         android:name="ma.n1akai.edusyncteacher.ui.home.modules.ModulesFragment"
         android:label="@string/modules"
-        tools:layout="@layout/fragment_modules" />
+        tools:layout="@layout/fragment_modules" >
+        <action
+            android:id="@+id/action_modulesFragment_to_testsNumberFragment"
+            app:destination="@id/testsNumberFragment" />
+        <action
+            android:id="@+id/action_modulesFragment_to_markFragment"
+            app:destination="@id/markFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testsNumberFragment"
+        android:name="ma.n1akai.edusyncteacher.ui.home.modules.testsnumber.TestsNumberFragment"
+        android:label="@string/number_of_tests"
+        tools:layout="@layout/fragment_tests_number">
+        <argument
+            android:name="module"
+            app:argType="ma.n1akai.edusyncteacher.data.model.Module" />
+        <action
+            android:id="@+id/action_testsNumberFragment_to_markFragment"
+            app:destination="@id/markFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/markFragment"
+        android:name="ma.n1akai.edusyncteacher.ui.home.modules.marks.MarkFragment"
+        android:label="fragment_mark"
+        tools:layout="@layout/fragment_mark" >
+        <argument
+            android:name="module"
+            app:argType="ma.n1akai.edusyncteacher.data.model.Module" />
+    </fragment>
 </navigation>

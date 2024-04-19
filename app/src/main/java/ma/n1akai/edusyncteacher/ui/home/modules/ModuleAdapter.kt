@@ -1,6 +1,7 @@
 package ma.n1akai.edusyncteacher.ui.home.modules
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +20,7 @@ class ModuleAdapter :
             field = value
             notifyDataSetChanged()
         }
+    lateinit var listener: OnModuleClickListener
 
     inner class ModuleViewHolder(
         private val binding: ListModulesBinding
@@ -29,6 +31,9 @@ class ModuleAdapter :
                 tvModuleName.text = "${item.course_code} - ${item.course_name}"
                 tvBranchName.text = item.branch_name
                 tvMht.text = "C:${item.Coef} - ${item.MHT}H"
+            }
+            binding.root.setOnClickListener {
+                listener.onModuleClick(item, it)
             }
         }
     }
@@ -46,6 +51,10 @@ class ModuleAdapter :
     override fun onBindViewHolder(holder: ModuleViewHolder, position: Int) {
         val item = items[position]
         holder.bind(item)
+    }
+
+    interface OnModuleClickListener {
+        fun onModuleClick(module: Module, view: View)
     }
 
 }

@@ -60,4 +60,15 @@
     <string name="branch">Branch:</string>
     <string name="group">Group:</string>
 
+    <!-- Mark Fragment -->
+    <string name="cc">CC%s</string>
+
+    <!-- TestsNumber Fragment -->
+    <string name="number_of_tests">Number of tests</string>
+    <string name="select_tests_message">Before you add marks for this module, please take a moment to specify the number of tests you\'d like to include in &lt;b>%s&lt;/b>.</string>
+    <string-array name="tests_numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>

@@ -25,12 +25,12 @@ class HomeworkFragment : BaseFragment<FragmentHomeworkBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.getHomeworks()
         spinnerAdapter = SpinnerAdapter(requireContext())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.getHomeworks()
         binding.homeworkSpinner.adapter = spinnerAdapter
         binding.homeworkSpinner.apply {
             onItemSelectedListener = object : AdapterView.OnItemSelectedListener {

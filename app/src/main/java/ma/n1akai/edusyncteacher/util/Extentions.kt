@@ -1,6 +1,9 @@
 package ma.n1akai.edusyncteacher.util
 
 import android.content.Context
+import android.os.Build
+import android.text.Html
+import android.text.Spanned
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -69,4 +72,8 @@ inline fun <T> LiveData<UiState<T>>.observeWithLoadingDialog(
             }
         }
     }
+}
+
+fun String.fromHtml(): Spanned {
+    return Html.fromHtml(this, Html.FROM_HTML_MODE_LEGACY)
 }

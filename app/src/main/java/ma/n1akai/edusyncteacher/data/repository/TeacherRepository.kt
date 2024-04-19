@@ -19,4 +19,8 @@ class TeacherRepository(
     suspend fun registerAttendance(list: List<AbsentRequest>) =
         safeApiCall { api.registerAttendance(list) }
     suspend fun getModules() = safeApiCall { api.getModules() }
+    suspend fun addTestNumber(classId: Int, courseId: Int, numTest: Int) =
+        safeApiCall { api.addTestNumber(classId, courseId, numTest) }
+    suspend fun getClassMarks(classId: Int, courseId: Int) =
+        safeApiCall { api.getClassMarks(classId, courseId) }
 }
