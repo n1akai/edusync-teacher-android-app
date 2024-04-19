@@ -7,6 +7,8 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewGroup.MarginLayoutParams
+import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -20,8 +22,10 @@ import ma.n1akai.edusyncteacher.R
 import ma.n1akai.edusyncteacher.data.model.Mark
 import ma.n1akai.edusyncteacher.data.model.Module
 import ma.n1akai.edusyncteacher.data.model.Student
+import ma.n1akai.edusyncteacher.data.network.request.TestMarkRequest
 import ma.n1akai.edusyncteacher.databinding.ListModulesBinding
 import ma.n1akai.edusyncteacher.databinding.ListStudentMarkBinding
+import ma.n1akai.edusyncteacher.util.MinMaxEditTextInputFilter
 
 class MarkAdapter :
     RecyclerView.Adapter<MarkAdapter.MarkViewHolder>() {
@@ -34,6 +38,7 @@ class MarkAdapter :
         }
 
     var numberOfTests = 1
+    var map = mutableMapOf<String, Mark>()
 
     inner class MarkViewHolder(
         private val binding: ListStudentMarkBinding
@@ -51,7 +56,7 @@ class MarkAdapter :
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                     )
-                    linearLayoutLp.setMargins(0, 8, 0, 0)
+                    linearLayoutLp.setMargins(0, 6, 0, 0)
                     linearLayout.apply {
                         orientation = LinearLayout.HORIZONTAL
                         layoutParams = linearLayoutLp
@@ -61,10 +66,9 @@ class MarkAdapter :
                     // TextView
                     val textView = TextView(context)
                     val textViewLp = LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
                     )
-                    textViewLp.setMargins(0, 0, 4, 0)
                     textView.textSize = 18f
                     textView.setTextColor(Color.parseColor("#FFFFFF"))
                     textView.text = cc
@@ -73,10 +77,18 @@ class MarkAdapter :
 
                     // EditText
                     val editText = EditText(context)
-                    editText.width = 30
-                    editText.height = 25
-                    editText.setPadding(0)
-                    if (item.test_marks != null) {
+                    editText.inputType = EditorInfo.TYPE_CLASS_NUMBER
+                    val editTextLp = LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                    )
+                    editTextLp.setMargins(24, 0, 24, 0) // Adjust margins as needed
+                    editText.background = context.getDrawable(R.drawable.edit_text_bg)
+                    editText.layoutParams = editTextLp
+                    editText.setPadding(16, 0, 16, 0)
+                    editText.setText("0.0")
+
+                    if (item.test_marks != null  && item.test_marks?.contains(cc) == true) {
                         editText.setText(item.test_marks?.get(cc).toString())
                     }
 
@@ -97,13 +109,12 @@ class MarkAdapter :
                             before: Int,
                             count: Int
                         ) {
-                            if (item.test_marks != null) {
-                                item.test_marks?.set(cc, s.toString().toDouble())
-                            } else {
-                                item.test_marks =
-                                    mutableMapOf(cc to s.toString().toDouble())
+                            if (item.test_marks == null) {
+                                item.test_marks = mutableMapOf()
                             }
-
+                            if (!s.isNullOrEmpty()) {
+                                item.test_marks!![cc] = s.toString().toDouble()
+                            }
                         }
 
                         override fun afterTextChanged(s: Editable?) {

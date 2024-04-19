@@ -12,6 +12,10 @@ data class Module(
     val branch_name: String,
     val class_name: String,
     val class_id: Int,
-    val num_test: Int?
+    var num_test: Int?
 
-) : Serializable
+) : Serializable {
+
+    fun getFullModuleName() = "$course_code - $course_name"
+
+}

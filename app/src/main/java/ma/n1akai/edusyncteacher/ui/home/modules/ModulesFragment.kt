@@ -54,7 +54,7 @@ class ModulesFragment : BaseFragment<FragmentModulesBinding>() {
                     findNavController()
                         .navigate(
                             ModulesFragmentDirections
-                                .actionModulesFragmentToMarkFragment(module)
+                                .actionModulesFragmentToMarkFragment(module, module.getFullModuleName())
                         )
                 }
             }

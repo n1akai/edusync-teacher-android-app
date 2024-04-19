@@ -5,6 +5,7 @@ import ma.n1akai.edusyncteacher.data.network.SafeApiCall
 import ma.n1akai.edusyncteacher.data.network.TeacherApi
 import ma.n1akai.edusyncteacher.data.network.request.AbsentRequest
 import ma.n1akai.edusyncteacher.data.network.request.HomeworkRequest
+import ma.n1akai.edusyncteacher.data.network.request.TestMarkRequest
 import retrofit2.http.Path
 
 class TeacherRepository(
@@ -23,4 +24,8 @@ class TeacherRepository(
         safeApiCall { api.addTestNumber(classId, courseId, numTest) }
     suspend fun getClassMarks(classId: Int, courseId: Int) =
         safeApiCall { api.getClassMarks(classId, courseId) }
+    suspend fun addTestMarks(list: List<TestMarkRequest>) =
+        safeApiCall { api.addTestMarks(list) }
+    suspend fun updateTestMarks(map: MutableMap<String, Double>) =
+        safeApiCall { api.updateTestMarks(map) }
 }

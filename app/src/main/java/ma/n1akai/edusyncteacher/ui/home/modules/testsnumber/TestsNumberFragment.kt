@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import ma.n1akai.edusyncteacher.R
+import ma.n1akai.edusyncteacher.data.model.Module
 import ma.n1akai.edusyncteacher.databinding.FragmentTestsNumberBinding
 import ma.n1akai.edusyncteacher.ui.BaseFragment
 import ma.n1akai.edusyncteacher.util.fromHtml
@@ -21,6 +23,7 @@ class TestsNumberFragment : BaseFragment<FragmentTestsNumberBinding>() {
 
     private val viewModel: TestsNumberViewModel by viewModels()
     private val args: TestsNumberFragmentArgs by navArgs()
+    private lateinit var module: Module
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,11 +38,12 @@ class TestsNumberFragment : BaseFragment<FragmentTestsNumberBinding>() {
                     listOf(2, 3, 4)
                 )
             binding.testsNumberBtnSubmit.setOnClickListener {
-                val module = args.module
+                module = args.module
+                module.num_test = testsNumberSpNum.selectedItem as Int
                 viewModel.addTestNum(
                     module.class_id,
                     module.course_id,
-                    testsNumberSpNum.selectedItem as Int
+                    module.num_test!!
                 )
             }
         }
@@ -49,7 +53,13 @@ class TestsNumberFragment : BaseFragment<FragmentTestsNumberBinding>() {
 
     private fun observer() {
         viewModel.testNum.observeWithLoadingDialog(viewLifecycleOwner, requireContext()) {
-            binding.root.snackbar("Done!")
+            findNavController()
+                .navigate(
+                    TestsNumberFragmentDirections.actionTestsNumberFragmentToMarkFragment(
+                        module,
+                        module.getFullModuleName()
+                    )
+                )
         }
     }
 

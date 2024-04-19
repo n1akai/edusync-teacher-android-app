@@ -8,9 +8,11 @@ import ma.n1akai.edusyncteacher.data.model.Student
 import ma.n1akai.edusyncteacher.data.model.Teacher
 import ma.n1akai.edusyncteacher.data.network.request.AbsentRequest
 import ma.n1akai.edusyncteacher.data.network.request.HomeworkRequest
+import ma.n1akai.edusyncteacher.data.network.request.TestMarkRequest
 import ma.n1akai.edusyncteacher.data.network.response.BaseResponse
 import retrofit2.http.Body
 import retrofit2.http.Field
+import retrofit2.http.FieldMap
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -55,13 +57,20 @@ interface TeacherApi {
         @Path("classId") classId: Int,
         @Path("courseId") courseId: Int,
         @Field("num_test") numTest: Int
-    ) : BaseResponse
+    ): BaseResponse
 
     @GET("/teacher/tests/course/{courseId}/class/{classId}")
     suspend fun getClassMarks(
         @Path("classId") classId: Int,
         @Path("courseId") courseId: Int,
-    ) : List<Mark>
+    ): List<Mark>
 
+    @POST("/teacher/tests")
+    suspend fun addTestMarks(@Body list: List<TestMarkRequest>): BaseResponse
 
+    @FormUrlEncoded
+    @POST("/teacher/tests/update")
+    suspend fun updateTestMarks(
+        @FieldMap map: MutableMap<String, Double>
+    ): BaseResponse
 }
