@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">EduSync Enseignant</string>
+
+    <!-- Progress Layout -->
+    <string name="loading">Chargement…</string>
+
+    <!-- Auth Activity -->
+    <string name="login">Connexion</string>
+    <string name="email_hint">john.smith@edusync.ma</string>
+    <string name="email">Email</string>
+    <string name="password">Mot de passe</string>
+    <string name="password_hint">********</string>
+
+    <!-- Home Activity -->
+    <string name="homework">Devoirs</string>
+    <string name="test">Test</string>
+    <string name="profile">Profil</string>
+    <string name="modules">Modules</string>
+    <string name="mark_attendance">Marquer la présence</string>
+    <string name="logout">Déconnexion</string>
+
+    <!-- Dashboard Fragment -->
+    <string name="dashboard">Tableau de bord</string>
+
+    <!-- Homework Fragment -->
+    <string name="submitted">Soumis</string>
+    <string name="classes">Classes</string>
+
+    <!-- Add Homework Fragment -->
+    <string name="add_homework">Ajouter un devoir</string>
+    <string name="homework_name">Nom du devoir</string>
+    <string name="class_">Classe</string>
+    <string name="subjects">Sujets</string>
+    <string name="description">Description</string>
+    <string name="homework_name_hint">Exercice...</string>
+    <string name="homework_description_hint">De quoi s\'agit-il…</string>
+
+    <!-- Attendance Fragment -->
+    <string name="absent">Absent</string>
+    <string name="submit">Soumettre</string>
+    <string name="attendance">Présence</string>
+    <string name="class_timing">Horaire de la classe</string>
+    <string name="to">à</string>
+
+    <!-- Profile Fragment -->
+    <string name="cne">CNE</string>
+    <string name="first_name">Prénom</string>
+    <string name="last_name">Nom de famille</string>
+    <string name="phone_number">Numéro de téléphone</string>
+    <string name="date_of_birth">Date de naissance</string>
+    <string name="joining_date">Date d\'adhésion</string>
+    <string name="qualification">Qualification</string>
+    <string name="experience">Expérience</string>
+    <string name="adresse">Adresse</string>
+    <string name="change_password">Changer le mot de passe</string>
+
+    <!-- Module Fragment -->
+    <string name="modules_size">Modules (%1$d)</string>
+    <string name="module">Module :</string>
+    <string name="branch">Branche :</string>
+    <string name="group">Groupe :</string>
+
+    <!-- Mark Fragment -->
+    <string name="cc">CC%s</string>
+
+    <!-- TestsNumber Fragment -->
+    <string name="number_of_tests">Nombre de tests</string>
+    <string name="select_tests_message">Avant d\'ajouter des notes pour ce module, veuillez prendre un moment pour spécifier le nombre de tests que vous souhaitez inclure dans &lt;b>%s&lt;/b>.</string>
+    <string-array name="tests_numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

@@ -2,7 +2,7 @@
     <string name="app_name">EduSync Teacher</string>
 
     <!-- Progress Layout -->
-    <string name="loading">Loading...</string>
+    <string name="loading">Loading…</string>
 
     <!-- Auth Activity -->
     <string name="login">Login</string>
@@ -32,8 +32,8 @@
     <string name="class_">Class</string>
     <string name="subjects">Subjects</string>
     <string name="description">Description</string>
-    <string name="homework_name_hint">Exercise...</string>
-    <string name="homework_description_hint">What the homework about...</string>
+    <string name="homework_name_hint">Exercise…</string>
+    <string name="homework_description_hint">What the homework about…</string>
 
     <!-- Attendance Fragment -->
     <string name="absent">Absent</string>
