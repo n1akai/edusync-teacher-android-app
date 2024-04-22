@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">EduSync Teacher</string>
+
+    <!-- Progress Layout -->
+    <string name="loading">جار التحميل…</string>
+
+    <!-- Auth Activity -->
+    <string name="login">تسجيل الدخول</string>
+    <string name="email_hint">john.smith@edusync.ma</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="password_hint">********</string>
+
+    <!-- Home Activity -->
+    <string name="homework">الواجبات المنزلية</string>
+    <string name="test">اختبار</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="modules">الوحدات الدراسية</string>
+    <string name="mark_attendance">تسجيل الحضور</string>
+    <string name="logout">تسجيل الخروج</string>
+
+    <!-- Dashboard Fragment -->
+    <string name="dashboard">لوحة القيادة</string>
+
+    <!-- Homework Fragment -->
+    <string name="submitted">تم التقديم</string>
+    <string name="classes">الفصول الدراسية</string>
+
+    <!-- Add Homework Fragment -->
+    <string name="add_homework">إضافة واجب منزلي</string>
+    <string name="homework_name">اسم الواجب المنزلي</string>
+    <string name="class_">الصف</string>
+    <string name="subjects">المواضيع</string>
+    <string name="description">الوصف</string>
+    <string name="homework_name_hint">تمرين…</string>
+    <string name="homework_description_hint">ما هو الواجب المنزلي عن…</string>
+
+    <!-- Attendance Fragment -->
+    <string name="absent">غائب</string>
+    <string name="submit">إرسال</string>
+    <string name="attendance">الحضور</string>
+    <string name="class_timing">توقيت الصف</string>
+    <string name="to">إلى</string>
+
+    <!-- Profile Fragment -->
+    <string name="cne">CNE</string>
+    <string name="first_name">الاسم الأول</string>
+    <string name="last_name">اسم العائلة</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="date_of_birth">تاريخ الميلاد</string>
+    <string name="joining_date">تاريخ الانضمام</string>
+    <string name="qualification">المؤهل العلمي</string>
+    <string name="experience">الخبرة</string>
+    <string name="adresse">العنوان</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+
+    <!-- Module Fragment -->
+    <string name="modules_size">الوحدات الدراسية (%1$d)</string>
+    <string name="module">الوحدة:</string>
+    <string name="branch">الفرع:</string>
+    <string name="group">المجموعة:</string>
+
+    <!-- Mark Fragment -->
+    <string name="cc">CC%s</string>
+
+    <!-- TestsNumber Fragment -->
+    <string name="number_of_tests">عدد الاختبارات</string>
+    <string name="select_tests_message">قبل إضافة العلامات لهذه الوحدة، يرجى أن تأخذ لحظة لتحديد عدد الاختبارات التي ترغب في تضمينها في &lt;b>%s&lt;/b>.</string>
+    <string-array name="tests_numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>
